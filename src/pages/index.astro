@@ -1,37 +1,19 @@
 ---
-import CardCotizacion from "../components/CardCotizacion.astro";
+import Cotizaciones from "../components/Cotizaciones.astro";
 import Layout from "../layouts/Layout.astro";
-
-export interface TipoCambio {
-  tipo: string;
-  compra: string;
-  venta: string;
-}
-
-const data: TipoCambio[] = await fetch(
-  "https://api-dolar-hoy.vercel.app/cotizacion"
-).then((res) => res.json());
 ---
 
 <Layout title="Inicio">
   <main>
-    {
-      data ? (
-        data.map(({ tipo, compra, venta }: TipoCambio) => (
-          <CardCotizacion title={tipo} compra={compra} venta={venta} />
-        ))
-      ) : (
-        <span class="loader" />
-      )
-    }
+    <Cotizaciones />
   </main>
-</Layout>
 
-<style>
-  main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
-  }
-</style>
+  <style>
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 10px;
+    }
+  </style>
+</Layout>
