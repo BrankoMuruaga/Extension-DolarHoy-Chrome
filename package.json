@@ -9,9 +9,12 @@
     "preview": "astro preview",
     "astro": "astro"
   },
+  "devDependencies": {
+    "prettier": "^3.3.3"
+  },
   "dependencies": {
-    "astro": "^4.14.5",
     "@astrojs/check": "^0.9.3",
+    "astro": "^4.14.5",
     "typescript": "^5.5.4"
   }
 }

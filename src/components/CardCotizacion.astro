@@ -1,0 +1,80 @@
+---
+interface Props {
+  title: string;
+  compra: string;
+  venta: string;
+}
+const { title, compra, venta } = Astro.props;
+---
+
+<section>
+  <h2 class="title">{title}</h2>
+  <a class="valores">
+    <div class="valor">
+      <div class="label">Compra</div><div class="precio">{compra}</div>
+    </div>
+    <div class="separador"></div>
+    <div class="valor">
+      <div class="label">Venta</div><div class="precio">{venta}</div>
+    </div>
+  </a>
+</section>
+
+<style>
+  section {
+    box-shadow: 0 0 8px #00000021;
+    border-top: 2px solid var(--green);
+    margin-bottom: 10px;
+    padding: 8px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .label {
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    width: 25%;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #8e8e8e;
+  }
+
+  .precio {
+    color: var(--green);
+    font-weight: 700;
+    font-size: 0.9375rem;
+  }
+
+  .title {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    width: 25%;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #8e8e8e;
+  }
+
+  .valores {
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+  }
+
+  .valor {
+    gap: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .separador {
+    width: 1px;
+    height: 100%;
+    background: var(--green);
+    margin: 0 10px;
+    justify-content: center;
+  }
+</style>
